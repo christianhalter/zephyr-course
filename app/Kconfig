@@ -1,7 +1,17 @@
+menu "Configuracion de mi app"
+
 config LED_BLINKING_PERIOD
     int "Periodo del LED"
     default 1000
+    range 100 5000
     help
         Periodo de blinkeo
 
+endmenu
+
+
+menu "Configuracion de Zephyr"
+
 source "Kconfig.zephyr"
+
+endmenu
