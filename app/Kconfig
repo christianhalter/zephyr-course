@@ -1,11 +1,30 @@
 menu "Configuracion de mi app"
 
-config LED_BLINKING_PERIOD
-    int "Periodo del LED"
-    default 1000
-    range 100 5000
-    help
-        Periodo de blinkeo
+    choice
+        prompt "LED speeds"
+        default BLINK_PERIOD_1000MS
+        optional
+    
+    config BLINK_PERIOD_250MS
+        bool "250ms period"
+
+    config BLINK_PERIOD_1000MS
+        bool "1000ms period"
+
+    config BLINK_PERIOD_500MS
+        bool "500ms period"
+
+    endchoice
+
+    config LED_BLINKING_PERIOD
+        int
+        default 250 if BLINK_PERIOD_250MS
+        default 1000 if BLINK_PERIOD_1000MS
+        default 500 if BLINK_PERIOD_500MS
+        default 1500
+        range 100 5000
+        help
+            Periodo de blinkeo
 
 endmenu
 
