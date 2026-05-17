@@ -28,6 +28,7 @@ menu "Configuracion de mi app"
 
 endmenu
 
+rsource "deps/Kconfig.deps"
 
 menu "Configuracion de Zephyr"
 
