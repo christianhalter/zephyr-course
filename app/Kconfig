@@ -67,6 +67,11 @@ config EXPERT_LED_SETTINGS
     bool
     default y
 
+config APP_HEARTBEAT_PERIOD_MS
+    int "App Heartbeat Period (ms)"
+    default 500
+    range 100 2000
+
 menu "Zephyr Configuration"
 
 source "Kconfig.zephyr"
