@@ -1,5 +1,5 @@
 board:
-  name: rpi_pico
+  name: copied_board
   full_name: Raspberry Pi Pico
   vendor: raspberrypi
   socs:
