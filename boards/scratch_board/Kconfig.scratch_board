@@ -1,0 +1,4 @@
+
+config BOARD_SCRATCH_BOARD
+	select SOC_RP2040
+    select RP2_FLASH_W25Q080
