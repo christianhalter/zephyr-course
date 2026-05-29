@@ -1,7 +1,7 @@
 # Copyright (c) 2021 Yonatan Schachter
 # SPDX-License-Identifier: Apache-2.0
 
-if BOARD_RPI_PICO
+if BOARD_COPIED_BOARD
 
 if I2C_DW
 
@@ -24,4 +24,4 @@ config HEAP_MEM_POOL_ADD_SIZE_BOARD
 
 endif # BOARD_RPI_PICO_RP2040_W && WIFI_AIROC
 
-endif # BOARD_RPI_PICO
+endif # BOARD_COPIED_BOARD

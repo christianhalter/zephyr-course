@@ -1,4 +1,4 @@
-identifier: rpi_pico
+identifier: copied_board
 name: Raspberry Pi Pico
 type: mcu
 arch: arm
