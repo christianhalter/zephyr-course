@@ -3,9 +3,6 @@ board:
   full_name: Raspberry Pi Pico
   vendor: raspberrypi
   socs:
-    - name: rp2040
-      variants:
-        - name: w
-          variants:
-            - name: mcuboot
-        - name: mcuboot
+  - name: rp2040
+    variants:
+    - name: w

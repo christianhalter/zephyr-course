@@ -1,6 +1,6 @@
 board:
   name: scratch_board
-  full_name: My New Board
+  full_name: Board from Scratch
   vendor: raspberrypi
   socs:
     - name: rp2040
