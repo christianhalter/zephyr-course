@@ -1,0 +1,3 @@
+description: Led switch using sensor properties
+compatible: "led,switch"
+include: base.yaml
