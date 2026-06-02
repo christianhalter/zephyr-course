@@ -2,4 +2,9 @@
     aliases {
         app-led = &led0;
     };
+
+    led_switch0: led_switch {
+        compatible = "led,switch";
+        status = "okay";
+    };
 };
