@@ -1,0 +1,6 @@
+config LED_SWITCH
+    bool "Custom LED switch"
+    default y
+    depends on DT_HAS_LED_SWITCH_ENABLED
+    help
+        Enable custom LED switch driver
