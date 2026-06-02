@@ -77,3 +77,10 @@ menu "Zephyr Configuration"
 source "Kconfig.zephyr"
 
 endmenu
+
+
+menu "Drivers Configuration"
+
+rsource "../drivers/led-switch-module/Kconfig"
+
+endmenu
