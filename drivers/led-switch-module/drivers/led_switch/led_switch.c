@@ -27,7 +27,7 @@ static int led_switch_channel_get(const struct device *dev,
 	return 0;
 }
 
-static int nn_driver_sample_fetch(const struct device *dev,
+static int led_switch_sample_fetch(const struct device *dev,
                                   enum sensor_channel chan)
 {
     const struct led_switch_config *cfg = dev->config;
@@ -68,3 +68,5 @@ static int led_switch_init(const struct device *dev)
 				     &led_switch_data_##inst,                           \
 				     &led_switch_config_##inst, POST_KERNEL,            \
 				     CONFIG_SENSOR_INIT_PRIORITY, &led_switch_api);
+
+DT_INST_FOREACH_STATUS_OKAY(LED_SWITCH_DEFINE);
