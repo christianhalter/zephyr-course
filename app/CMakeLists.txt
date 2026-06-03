@@ -6,4 +6,4 @@ project(my_zephyr_app)
 
 target_sources(app PRIVATE src/main.cpp)
 
-add_subdirectory(../drivers/led-switch-module led-switch-module_build)
+list(APPEND EXTRA_ZEPHYR_MODULES ${CMAKE_CURRENT_SOURCE_DIR}/../drivers/led-switch-module)
