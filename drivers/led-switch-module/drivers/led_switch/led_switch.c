@@ -42,3 +42,9 @@ static DEVICE_API(sensor,led_switch_api) = {
 	.sample_fetch = led_switch_sample_fetch,
 	.channel_get = led_switch_channel_get,
 };
+
+#define LED_SWITCH_DEFINE(inst)							\
+	static struct led_switch_data led_switch_data_##inst;			\
+	static const struct led_switch_config led_switch_config_##inst = {	\
+		.led = GPIO_DT_SPEC_INST_GET(inst, gpios),			\
+	};
