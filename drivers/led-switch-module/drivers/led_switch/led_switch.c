@@ -63,4 +63,8 @@ static int led_switch_init(const struct device *dev)
 	static struct led_switch_data led_switch_data_##inst;               \
 	static const struct led_switch_config led_switch_config_##inst = {  \
 		.led = GPIO_DT_SPEC_INST_GET(inst, gpios),                      \
-	};
+	};                                                                  \
+	DEVICE_DT_INST_DEFINE(inst, led_switch_init, NULL,                  \
+				     &led_switch_data_##inst,                           \
+				     &led_switch_config_##inst, POST_KERNEL,            \
+				     CONFIG_SENSOR_INIT_PRIORITY, &led_switch_api);
