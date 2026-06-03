@@ -43,8 +43,24 @@ static DEVICE_API(sensor,led_switch_api) = {
 	.channel_get = led_switch_channel_get,
 };
 
-#define LED_SWITCH_DEFINE(inst)							\
-	static struct led_switch_data led_switch_data_##inst;			\
-	static const struct led_switch_config led_switch_config_##inst = {	\
-		.led = GPIO_DT_SPEC_INST_GET(inst, gpios),			\
+static int led_switch_init(const struct device *dev)
+{
+	const struct led_switch_config *cfg = dev->config;
+	int ret;
+	if (!gpio_is_ready_dt(&cfg->led)) {
+		LOG_ERR("GPIO device not ready");
+		return -ENODEV;
+	}
+	ret = gpio_pin_configure_dt(&cfg->led, GPIO_OUTPUT_INACTIVE);
+	if (ret < 0) {
+		LOG_ERR("Failed to configure LED GPIO: %d", ret);
+		return ret;
+	}
+	return 0;
+}
+
+#define LED_SWITCH_DEFINE(inst)                                         \
+	static struct led_switch_data led_switch_data_##inst;               \
+	static const struct led_switch_config led_switch_config_##inst = {  \
+		.led = GPIO_DT_SPEC_INST_GET(inst, gpios),                      \
 	};
