@@ -1,10 +1,16 @@
 /{
     aliases {
         app-led = &led0;
+        led-switch = &led_switch0;
     };
 
     led_switch0: led_switch {
         compatible = "led,switch";
+        gpios = <&gpio0 25 GPIO_ACTIVE_HIGH>;
         status = "okay";
     };
+};
+
+&led0 {
+    status = "disabled";
 };
