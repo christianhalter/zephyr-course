@@ -6,6 +6,10 @@
 
 #define DT_DRV_COMPAT led_switch
 
+#if DT_NUM_INST_STATUS_OKAY(DT_DRV_COMPAT) == 0
+#warning "LED Switch driver enabled without any devices"
+#endif
+
 LOG_MODULE_REGISTER(led_switch, LOG_LEVEL_INF);
 
 struct led_switch_config {
