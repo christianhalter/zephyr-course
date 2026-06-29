@@ -1,3 +1,10 @@
 description: Led switch using sensor properties
 compatible: "led,switch"
 include: [sensor-device.yaml, base.yaml]
+
+properties:
+  gpios:
+    type: phandle-array
+    required: true
+    description: GPIO pin for the LED switch
+    
