@@ -1,1 +1,5 @@
-add_subdirectory_ifdef(CONFIG_LED_SWITCH drivers/led_switch)
+# Subdirectories
+add_subdirectory(drivers)
+
+# Include headers
+zephyr_include_directories(drivers)
