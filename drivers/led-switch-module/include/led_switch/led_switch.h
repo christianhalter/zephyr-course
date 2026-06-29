@@ -8,7 +8,7 @@
 extern "C"{
 #endif
 
-__subsystem struct led_switch_api {
+struct led_switch_api {
 	int (*channel_get)(const struct device *dev, enum sensor_channel chan, struct sensor_value *val);
 	int (*sample_fetch)(const struct device *dev, enum sensor_channel chan);
 };

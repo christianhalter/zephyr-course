@@ -43,9 +43,9 @@ static int led_switch_sample_fetch(const struct device *dev,
 	return 0;
 }
 
-static DEVICE_API(sensor,led_switch_api) = {
-	.sample_fetch = led_switch_sample_fetch,
-	.channel_get = led_switch_channel_get,
+static const struct sensor_driver_api led_switch_api = {
+	.sample_fetch = &led_switch_sample_fetch,
+	.channel_get = &led_switch_channel_get,
 };
 
 static int led_switch_init(const struct device *dev)
