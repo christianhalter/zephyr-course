@@ -28,7 +28,7 @@ int main(void)
 
         if (led_state)
         {
-            if (sensor_sample_fetch(led_switch, SENSOR_CHAN_ALL)<0)
+            if (sensor_sample_fetch(led_switch)<0)
             {
                 LOG_ERR("Sample fetch - LED OFF - failed");
                 return 0;
