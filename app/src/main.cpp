@@ -40,7 +40,7 @@ static int cmd_fetch(const struct shell *sh, size_t argc, char **argv)
     return 0;
 }
 
-static int cmd_read(const struct shell *sh, size_t argc, char **argv)
+static sensor_value cmd_read(const struct shell *sh, size_t argc, char **argv)
 {
     ARG_UNUSED(argc);
     ARG_UNUSED(argv);
@@ -49,7 +49,7 @@ static int cmd_read(const struct shell *sh, size_t argc, char **argv)
     {
         shell_error(sh, "Channel get - LED ON - failed");
     }
-    return 0;
+    return value;
 }
 
 int main(void)
