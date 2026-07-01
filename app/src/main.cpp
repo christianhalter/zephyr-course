@@ -96,3 +96,12 @@ int main(void)
     }
     return 0;
 }
+
+SHELL_STATIC_SUBCMD_SET_CREATE(
+    sub_sensor,
+    SHELL_CMD(fetch, NULL, "Turn LED OFF", cmd_fetch),
+    SHELL_CMD(read, NULL, "Turn LED ON and print result", cmd_read),
+    SHELL_CMD(info, NULL, "Print device name and ready state", cmd_info),
+    SHELL_SUBCMD_SET_END);
+
+SHELL_CMD_REGISTER(sensor, &sub_sensor, "Sensor commands", NULL);
